@@ -1,0 +1,318 @@
+/**
+ * Why TranslateOS — body.page-why (Figma 45933:38255)
+ * Hero: page-hero-bleed.css (do not override here)
+ */
+
+.page-why .page {
+  background: var(--white);
+}
+
+/* layout utilities (used in why-translateos.php markup) */
+.page-why .flex {
+  display: flex;
+}
+
+.page-why .flex-col {
+  flex-direction: column;
+}
+
+.page-why .items-center {
+  align-items: center;
+}
+
+.page-why .justify-center {
+  justify-content: center;
+}
+
+/* —— §1 Communicate + compare + stats (45933:38292) —— */
+.page-why .page-section--communicate .page-section__inner {
+  max-width: 1192px;
+  width: 100%;
+}
+
+.page-why .page-section--communicate .compare-pair,
+.page-why .page-section--communicate .stat-pills {
+  width: 100%;
+}
+
+.page-why .page-section__title--communicate {
+  font-family: var(--font-inter, Inter), var(--font-display);
+  font-size: clamp(32px, 3.75vw, 54px);
+  line-height: 1.1;
+  margin-bottom: 44px;
+}
+
+.page-why .compare-pair {
+  margin-top: 0;
+  gap: 31px;
+}
+
+.page-why .compare-card__title {
+  font-size: clamp(24px, 2.2vw, 32px);
+  letter-spacing: 0.52px;
+}
+
+.page-why .compare-card__text {
+  font-size: clamp(18px, 2vw, 24px);
+}
+
+.page-why .compare-pair__arrow {
+  width: 55.5px;
+  height: 55.5px;
+  font-size: 23.5px;
+  line-height: 1;
+}
+
+.page-why .stat-pills {
+  max-width: 916px;
+  margin-inline: auto;
+  margin-top: 60px;
+  font-family: var(--font-inter, Inter), var(--font-ui);
+  font-size: clamp(22px, 2.2vw, 32px);
+  line-height: 1.26;
+}
+
+.page-why .stat-pills__row:last-child {
+  margin-bottom: 0;
+}
+
+/* —— §2 Media band (45933:38388) — stacked image + copy —— */
+.page-why .media-band {
+  padding-top: clamp(56px, 7vw, 88px);
+  padding-bottom: clamp(56px, 7vw, 88px);
+}
+
+.page-why .media-band__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  align-items: flex-start;
+  max-width: 1344px;
+  padding-inline: 0;
+}
+
+.page-why .media-band__photo-wrap {
+  width: 100%;
+  height: clamp(280px, 36.5vw, 526px);
+  overflow: hidden;
+  background: var(--brand-deep);
+}
+
+.page-why .media-band__photo {
+  display: block;
+  width: 100%;
+  height: clamp(480px, 62vw, 896px);
+  margin-top: clamp(-80px, -11vw, -162px);
+  object-fit: cover;
+  object-position: center top;
+}
+
+.page-why .media-band__copy {
+  position: static;
+  max-width: 1082px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+}
+
+.page-why .media-band__title {
+  font-family: var(--font-inter, Inter), var(--font-ui);
+  font-size: clamp(32px, 4.45vw, 64px);
+  font-weight: var(--weight-extrabold);
+  line-height: 1.1;
+  color: #004c6a;
+  margin: 0;
+}
+
+/* —— §3 Benefits (45933:38315) —— */
+.page-why .page-section--benefits .page-section__inner--wide {
+  max-width: 1344px;
+}
+
+.page-why .page-section__title--platform {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.45vw, 64px);
+  line-height: 1.2;
+  letter-spacing: 0.52px;
+  color: #004c6a;
+  margin-bottom: 56px;
+}
+
+.page-why .page-section__title--platform .platform-line.accent {
+  color: var(--coral);
+}
+
+.page-why .benefit-row {
+  border-top-color: #004c6a;
+  gap: 12px;
+}
+
+.page-why .benefit-row__label {
+  font-weight: 600;
+  line-height: 19.5px;
+}
+
+.page-why .benefit-row__title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.33vw, 33.6px);
+  line-height: 1.2;
+  color: #004c6a;
+}
+
+.page-why .benefit-row__meta {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--black);
+}
+
+/* —— §4 Simple from day one (45933:38398) —— */
+.page-why .page-section--day-one .page-section__inner {
+  max-width: 1344px;
+}
+
+.page-why .page-section--day-one .page-section__header {
+  max-width: 643px;
+  margin-bottom: 64px;
+  text-align: left;
+}
+
+.page-why .page-section--day-one .page-section__title {
+  text-align: left;
+  font-family: var(--font-inter, Inter), var(--font-display);
+  font-size: clamp(36px, 4.45vw, 64px);
+  line-height: 1.1;
+  color: #004c6a;
+  margin: 0 0 0;
+}
+
+.page-why .day-one-intro {
+  margin: 0;
+  max-width: 503px;
+  font-family: var(--font-inter, Inter), var(--font-ui);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.5;
+  color: var(--black);
+  text-align: left;
+}
+
+.page-why .day-one-intro p {
+  margin: 0;
+}
+
+.page-why .day-grid {
+  margin-top: 0;
+  gap: 92px 44px;
+}
+
+.page-why .day-card {
+  gap: 22px;
+}
+
+.page-why .day-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--cornflower);
+  border-radius: 16px;
+}
+
+.page-why .day-card__icon img {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+.page-why .day-card__title {
+  font-family: var(--font-inter, Inter), var(--font-ui);
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.2;
+  color: #004c6a;
+}
+
+.page-why .day-card__text {
+  font-family: var(--font-inter, Inter), var(--font-ui);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.2;
+  color: var(--black);
+}
+
+.page-why .day-card__link {
+  font-family: var(--font-body, Aptos), var(--font-ui);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.06;
+  font-weight: var(--weight-regular);
+  color: var(--cornflower);
+}
+
+.page-why .day-card__link img {
+  filter: none;
+}
+
+/* Pre-footer CTA — Figma: tall portrait, bottom flush to footer, inside right column */
+.page-why .pre-footer-cta {
+  padding-bottom: 0;
+}
+
+.page-why .pre-footer-cta--img-contain .pre-footer-cta__visual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  max-width: min(680px, 100%);
+  height: clamp(360px, 58vw, 619px);
+  margin-inline: auto;
+  overflow: hidden;
+  background: transparent;
+}
+
+.page-why .pre-footer-cta--img-contain .pre-footer-cta__visual img {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+@media (min-width: 1024px) {
+  .page-why .pre-footer-cta__inner {
+    align-items: end;
+  }
+
+  .page-why .pre-footer-cta--img-contain .pre-footer-cta__visual {
+    justify-self: end;
+    max-width: min(720px, 100%);
+    height: clamp(520px, 43vw, 619px);
+    margin-inline: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .page-why .pre-footer-cta--img-contain .pre-footer-cta__visual {
+    max-width: min(400px, 92vw);
+    height: clamp(300px, 62vw, 420px);
+  }
+
+  .page-why .pre-footer-cta--img-contain .pre-footer-cta__visual img {
+    object-fit: contain;
+    object-position: center bottom;
+  }
+}
+
+@media (max-width: 1023px) {
+  .page-why .media-band__photo-wrap {
+    border-radius: 0;
+  }
+
+  .page-why .day-grid {
+    gap: 48px;
+  }
+}

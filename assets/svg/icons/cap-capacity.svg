@@ -1,0 +1,7 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="CapabilityIcon">
+<path id="Vector" d="M3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C13.1854 2.99052 14.3611 3.21533 15.4594 3.66151C16.5577 4.1077 17.557 4.76647 18.4 5.6" stroke="#6B9EE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M21 12C21 14.3869 20.0518 16.6761 18.364 18.364C16.6761 20.0518 14.3869 21 12 21C10.8146 21.0095 9.63892 20.7847 8.54061 20.3385C7.44231 19.8923 6.44297 19.2335 5.6 18.4" stroke="#6B9EE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M18.4 3V5.6H15.8M5.6 21V18.4H8.2" stroke="#6B9EE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

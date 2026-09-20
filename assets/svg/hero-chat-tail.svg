@@ -1,0 +1,10 @@
+<svg width="146" height="105" viewBox="0 0 146 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#hero-tail-clip)">
+    <path d="M15 -39.5967H158.208C171.34 -39.5965 176.741 -22.7471 166.057 -15.1123L22.8486 87.2188C13.9137 93.6031 1.5 87.2159 1.5 76.2344V-26.0967C1.50001 -33.5525 7.54416 -39.5967 15 -39.5967Z" fill="#F8F7F8" stroke="#F0603D" stroke-width="3"/>
+  </g>
+  <defs>
+    <clipPath id="hero-tail-clip">
+      <rect width="146" height="105" fill="white" transform="matrix(-1 0 0 1 146 0)"/>
+    </clipPath>
+  </defs>
+</svg>

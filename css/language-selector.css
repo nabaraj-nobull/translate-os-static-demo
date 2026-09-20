@@ -1,0 +1,373 @@
+/* Scales from Figma 1440px artboard — wheels meet at center without overlapping */
+.section-translation__selector {
+  --gr-orange: #F0603D;
+  --gr-height: clamp(360px, calc(530 / 1440 * 100vw), 530px);
+  --gr-viewport: clamp(280px, calc(430 / 1440 * 100vw), 430px);
+  --gr-row: clamp(34px, calc(48 / 1440 * 100vw), 48px);
+  --gr-gap: clamp(6px, calc(12 / 1440 * 100vw), 12px);
+  --gr-wheel-max: clamp(200px, calc(370 / 1440 * 100vw), 370px);
+  --gr-wheel-width: min(var(--gr-wheel-max), calc(50% - 8px));
+  --gr-label-width: min(180px, calc(var(--gr-wheel-width) - 32px));
+  --gr-figure-side: clamp(4px, calc(165 / 1440 * 100vw), 165px);
+  --gr-figure-left-w: clamp(88px, calc(330 / 1440 * 100vw), 330px);
+  --gr-figure-right-w: clamp(84px, calc(315 / 1440 * 100vw), 315px);
+  --gr-center-gap: 4px;
+
+  width: 100%;
+  height: var(--gr-height);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #ffffff;
+
+  font-family: var(--font-inter, Inter), var(--font-poppins, Poppins), system-ui, sans-serif;
+}
+
+.section-translation__selector * {
+  box-sizing: border-box;
+}
+
+.section-translation__selector .gptread-language__stage {
+  width: min(100%, 1440px);
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.section-translation__selector .gptread-language__wheel {
+  width: var(--gr-wheel-width);
+  height: var(--gr-viewport);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  cursor: ns-resize;
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+
+.section-translation__selector .gptread-language__wheel--left {
+  left: max(4px, calc(50% - var(--gr-wheel-width)));
+}
+
+.section-translation__selector .gptread-language__wheel--right {
+  left: min(
+    calc(100% - var(--gr-wheel-width) - 4px),
+    calc(50% + var(--gr-center-gap))
+  );
+}
+
+.section-translation__selector .gptread-language__viewport {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000000 10%,
+    #000000 90%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000000 10%,
+    #000000 90%,
+    transparent 100%
+  );
+}
+
+.section-translation__selector .gptread-language__line-track,
+.section-translation__selector .gptread-language__label-track {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.section-translation__selector .gptread-language__line-track {
+  z-index: 1;
+}
+
+.section-translation__selector .gptread-language__label-track {
+  z-index: 3;
+}
+
+.section-translation__selector .gptread-language__row {
+  width: 100%;
+  height: var(--gr-row);
+  position: relative;
+}
+
+.section-translation__selector .gptread-language__line {
+  position: absolute;
+  top: 50%;
+  height: 0.7px;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.14);
+
+  will-change:
+    width,
+    opacity,
+    background-color;
+}
+
+.section-translation__selector .gptread-language__wheel--left .gptread-language__line {
+  left: 0;
+}
+
+.section-translation__selector .gptread-language__wheel--right .gptread-language__line {
+  right: 0;
+}
+
+.section-translation__selector .gptread-language__label {
+  width: var(--gr-label-width);
+  max-width: calc(100% - 8px);
+  position: absolute;
+  top: 50%;
+  color: #888888;
+
+  font-size: clamp(11px, calc(34 / 1440 * 100vw), var(--text-subhead));
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  letter-spacing: clamp(-0.72px, calc(-0.72 / 1440 * 100vw), -0.28px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  will-change:
+    left,
+    right,
+    opacity,
+    transform,
+    color;
+}
+
+.section-translation__selector .gptread-language__wheel--left .gptread-language__label {
+  text-align: right;
+  transform-origin: right center;
+}
+
+.section-translation__selector .gptread-language__wheel--right .gptread-language__label {
+  text-align: left;
+  transform-origin: left center;
+}
+
+.section-translation__selector .gptread-language__figure {
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+  pointer-events: none;
+  max-height: 92%;
+}
+
+.section-translation__selector .gptread-language__figure::after {
+  content: "";
+  position: absolute;
+  left: -4%;
+  right: -4%;
+  bottom: -1px;
+  height: 31%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.42) 45%,
+    rgba(255, 255, 255, 0.82) 72%,
+    #ffffff 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.section-translation__selector .gptread-language__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(566px, 92vh);
+  object-fit: contain;
+  object-position: center bottom;
+  position: relative;
+  z-index: 1;
+}
+
+.section-translation__selector .gptread-language__figure--left {
+  left: var(--gr-figure-side);
+  width: min(
+    var(--gr-figure-left-w),
+    calc(50% - var(--gr-wheel-width) * 0.35)
+  );
+}
+
+.section-translation__selector .gptread-language__figure--right {
+  right: var(--gr-figure-side);
+  width: min(
+    var(--gr-figure-right-w),
+    calc(50% - var(--gr-wheel-width) * 0.35)
+  );
+}
+
+.section-translation__selector .gptread-language__bubble {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  z-index: 6;
+
+  width: max-content;
+  max-width: min(290px, 86vw);
+
+  opacity: 0;
+  transform: translate(-50%, calc(-50% - 12px)) scale(0.97);
+
+  transition:
+    opacity 360ms ease,
+    transform 440ms cubic-bezier(.18,.78,.18,1);
+
+  pointer-events: none;
+}
+
+.section-translation__selector .gptread-language__bubble.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.section-translation__selector .gptread-language__bubble-card {
+  position: relative;
+  width: max-content;
+  max-width: min(290px, 42vw);
+
+  padding: clamp(10px, calc(16 / 1440 * 100vw), 16px)
+    clamp(12px, calc(20 / 1440 * 100vw), 20px);
+
+  border-radius: var(--radius-bubble, 22px);
+  background: #ffffff;
+  color: #111111;
+
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+
+  font-family: var(--font-inter, Inter), var(--font-poppins, Poppins), system-ui, sans-serif;
+
+  font-size: clamp(11px, calc(34 / 1440 * 100vw), var(--text-subhead));
+  font-weight: var(--weight-bold);
+  line-height: 1.18;
+  letter-spacing: -0.44px;
+
+  text-align: center;
+}
+
+.section-translation__selector .gptread-language__bubble-card::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: -8px;
+
+  width: 18px;
+  height: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    -6px -6px 18px rgba(0, 0, 0, 0.035);
+
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+}
+
+@media (max-width: 640px) {
+  .section-translation__selector {
+    --gr-height: clamp(320px, calc(440 / 1440 * 100vw), 440px);
+    --gr-viewport: clamp(260px, calc(358 / 1440 * 100vw), 358px);
+    --gr-row: clamp(32px, calc(41 / 1440 * 100vw), 41px);
+    --gr-center-gap: 6px;
+  }
+
+  .section-translation__selector .gptread-language__figure--left,
+  .section-translation__selector .gptread-language__figure--right {
+    display: none;
+  }
+
+  .section-translation__selector .gptread-language__wheel--left {
+    left: max(4px, calc(50% - var(--gr-wheel-width) - var(--gr-center-gap) / 2));
+  }
+
+  .section-translation__selector .gptread-language__wheel--right {
+    left: min(
+      calc(100% - var(--gr-wheel-width) - 4px),
+      calc(50% + var(--gr-center-gap) / 2)
+    );
+  }
+
+  .section-translation__selector .gptread-language__bubble-card {
+    max-width: min(46vw, 200px);
+    border-radius: 18px;
+  }
+
+  .section-translation__selector .gptread-language__bubble-card::after {
+    top: -6px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Desktop 1024+ — Figma 1440 artboard, fluid down to 1024 */
+@media (min-width: 1024px) {
+  .section-translation__selector {
+    --gr-height: clamp(377px, 36.806vw, 530px);
+    --gr-viewport: clamp(306px, 29.861vw, 430px);
+    --gr-row: clamp(41px, 3.333vw, 48px);
+    --gr-gap: clamp(8px, 0.833vw, 12px);
+    --gr-wheel-max: clamp(264px, 25.694vw, 370px);
+    --gr-wheel-width: clamp(264px, 25.694vw, 370px);
+    --gr-label-width: clamp(140px, 12.5vw, 180px);
+    --gr-figure-side: clamp(48px, 11.458vw, 165px);
+    --gr-figure-left-w: clamp(180px, 22.917vw, 330px);
+    --gr-figure-right-w: clamp(172px, 21.875vw, 315px);
+    --gr-center-gap: clamp(0px, 0.278vw, 4px);
+  }
+
+  .section-translation__selector .gptread-language__wheel--left {
+    left: calc(50% - var(--gr-wheel-width));
+  }
+
+  .section-translation__selector .gptread-language__wheel--right {
+    left: calc(50% + var(--gr-center-gap));
+  }
+
+  .section-translation__selector .gptread-language__figure--left {
+    left: var(--gr-figure-side);
+    width: var(--gr-figure-left-w);
+  }
+
+  .section-translation__selector .gptread-language__figure--right {
+    right: var(--gr-figure-side);
+    width: var(--gr-figure-right-w);
+  }
+
+  .section-translation__selector .gptread-language__label {
+    font-size: clamp(1rem, 0.9rem + 0.35vw, var(--text-subhead));
+    letter-spacing: -0.72px;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .section-translation__selector .gptread-language__bubble-card {
+    max-width: min(290px, 20vw);
+    font-size: clamp(1rem, 0.9rem + 0.35vw, var(--text-subhead));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-translation__selector .gptread-language__line-track,
+  .section-translation__selector .gptread-language__label-track,
+  .section-translation__selector .gptread-language__bubble {
+    transition: none;
+  }
+}
